@@ -7,11 +7,13 @@ public class OrderItem {
 
     private Integer quantity;
     private Double price;
-    List<Product> product = new ArrayList<>();
+    private Product product;
 
-    public OrderItem(Integer quantity, Double price) {
+    public OrderItem(Integer quantity, Double price, Product product) {
         this.quantity = quantity;
         this.price = price;
+        this.product = product;
+
     }
 
     public Integer getQuantity() {
@@ -30,18 +32,28 @@ public class OrderItem {
         this.price = price;
     }
 
-    public Double subTotal(){
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public double subTotal(){
         return price * quantity;
     }
 
-    public void addItem(){
-        product.add(new Product);
+    @Override
+    public String toString(){
+        return getProduct().getName() +
+                ", $" +
+                String.format("%.2f", price) +
+                ", Quantity: " +
+                quantity +
+                ", Subtotal: $" +
+                String.format("%.2f", subTotal());
     }
-
-    public void removeItem(){
-        product.remove(Product);
-    }
-
 
 
 }
