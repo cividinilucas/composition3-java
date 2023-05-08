@@ -47,7 +47,7 @@ public class Main {
             System.out.println("Enter quantity: ");
             int quantity = input.nextInt();
 
-            /* Intanciacoes */
+            /* Instanciacoes */
 
             Product product = new Product(productName, productPrice);
 
